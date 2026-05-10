@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   params.set("response_type", "code");
   params.set("client_id", clientId);
   params.set("redirect_uri", "http://localhost:3000/api/oidc/callback");
-  params.set("scope", "openid profile discord_id");
+  params.set("scope", "openid profile email groups");
   const authUrl = `${config.authorization_endpoint}?${params.toString()}`;
   res.send(`<a href="${authUrl}">Login with OIDC</a>`);
 });
